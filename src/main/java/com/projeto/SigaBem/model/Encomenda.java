@@ -1,4 +1,4 @@
-package com.projeto.SigaBem;
+package com.projeto.SigaBem.model;
 
 import lombok.Data;
 
@@ -15,9 +15,16 @@ public class Encomenda {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID id;
+
+    @Column(length = 60)
     private String nomeDestinatario;
+
+    @Column(length = 8, nullable = false)
     private String cepOrigem;
+
+    @Column(length = 8, nullable = false)
     private String cepDestino;
+
     private LocalDate dataPrevistaEntrega;
     private LocalDate dataConsulta;
     private BigDecimal vlTotalFrete;
